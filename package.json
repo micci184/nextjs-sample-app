@@ -1,0 +1,43 @@
+{
+  "name": "nextjs-sample-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple Next.js health app for EC2/ALB",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micci184/nextjs-sample-app.git"
+  },
+  "keywords": [
+    "nextjs",
+    "healthcheck",
+    "ec2",
+    "alb"
+  ],
+  "author": "m-maehara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micci184/nextjs-sample-app/issues"
+  },
+  "homepage": "https://github.com/micci184/nextjs-sample-app#readme",
+  "dependencies": {
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.0",
+    "@types/node": "^25.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.6",
+    "tailwindcss": "^4.2.0",
+    "typescript": "^5.9.3"
+  }
+}
