@@ -47,11 +47,34 @@ npm run build
 4. service ファイルを配置
 
 ```bash
+sudo mkdir -p /var/log/app
+sudo chown ec2-user:ec2-user /var/log/app
 sudo cp deploy/nextjs-health.service /etc/systemd/system/nextjs-health.service
 sudo systemctl daemon-reload
 sudo systemctl enable nextjs-health
 sudo systemctl start nextjs-health
 sudo systemctl status nextjs-health
+```
+
+アプリログ出力設定（JSON）:
+
+```json
+{
+  "logDirectory": "/var/log/app",
+  "stdoutLogFile": "/var/log/app/nextjs-health.log",
+  "stderrLogFile": "/var/log/app/nextjs-health-error.log",
+  "format": "jsonl (1行1JSON推奨)",
+  "tailCommands": {
+    "stdout": "tail -f /var/log/app/nextjs-health.log",
+    "stderr": "tail -f /var/log/app/nextjs-health-error.log"
+  }
+}
+```
+
+JSONログの出力例（アプリ側で出力する1行ログ）:
+
+```json
+{"level":"info","time":"2026-02-20T10:10:10.123Z","service":"nextjs-health","message":"request completed","path":"/api/health","status":200,"durationMs":4}
 ```
 
 5. ALB ターゲットグループのヘルスチェック
