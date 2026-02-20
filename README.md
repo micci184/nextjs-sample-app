@@ -2,6 +2,10 @@
 
 Next.js (latest) + TypeScript + Tailwind の簡易アプリです。
 
+## Runtime 要件
+
+- Node.js: `>= 20.9.0`（Next.js 16 要件）
+
 ## 画面
 
 - `/` : Instagram風ログイン画面
@@ -30,7 +34,7 @@ npm run start -- --hostname 0.0.0.0 --port 3000
 
 ## EC2 (Node.js + systemd) デプロイ手順
 
-1. Node.js LTS をインストール
+1. Node.js `>= 20.9.0` をインストール
 2. アプリを EC2 に配置（例: `/opt/nextjs-sample-app`）
 3. 依存関係とビルド
 
