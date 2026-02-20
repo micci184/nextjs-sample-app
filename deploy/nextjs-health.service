@@ -11,6 +11,8 @@ Restart=always
 RestartSec=5
 Environment=NODE_ENV=production
 Environment=PORT=3000
+StandardOutput=append:/var/log/app/nextjs-health.log
+StandardError=append:/var/log/app/nextjs-health-error.log
 
 [Install]
 WantedBy=multi-user.target
